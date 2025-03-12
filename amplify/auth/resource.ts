@@ -25,7 +25,13 @@ export const auth = defineAuth({
       mutable: true,
     },
   },
-
+  // Customize verification message
+  verificationMessages: {
+    email: {
+      subject: 'Your Patient Portal Verification Code',
+      message: (code) => `Your Patient Portal verification code is: ${code}`
+    }
+  },
   // Set password policy
   passwordPolicy: {
     minimumLength: 8,
